@@ -1,0 +1,41 @@
+.footer {
+  background-color: #343a40;
+}
+
+.footer-heading {
+  font-weight: bold;
+}
+
+.social-link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-link:hover {
+  color: #007bff;
+}
+
+.footer-rights {
+  margin-top: 20px;
+  font-size: 0.875rem;
+}
+
+/* Ensure footer takes full width */
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer {
+  margin: 0;
+  padding: 20px 0; /* Adjust padding if needed */
+}

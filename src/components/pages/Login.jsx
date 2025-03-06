@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './Login.css'; // Make sure to import your CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,40 +11,40 @@ const Login = () => {
     e.preventDefault();
     if (email === "admin@example.com" && password === "password123") {
       alert("Login Successful!");
-      navigate("/"); // Redirect to home after login
+      navigate("/"); 
     } else {
       alert("Invalid Credentials");
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <form onSubmit={handleSubmit} className="p-6 bg-white shadow-md rounded-md">
-        <h2 className="text-2xl font-bold text-center">Login</h2>
-        
-        <div className="mt-4">
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2 className="login-title">Login</h2>
+
+        <div className="input-group">
           <label>Email:</label>
           <input
             type="email"
-            className="border p-2 w-full rounded-md"
+            className="input-field"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
 
-        <div className="mt-4">
+        <div className="input-group">
           <label>Password:</label>
           <input
             type="password"
-            className="border p-2 w-full rounded-md"
+            className="input-field"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
 
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded-md mt-4 w-full">
+        <button type="submit" className="submit-btn">
           Login
         </button>
       </form>

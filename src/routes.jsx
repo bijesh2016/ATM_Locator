@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ATMs from "./pages/ATMs";
-import Banks from "./pages/Banks";  // Import Banks Page
+import Banks from "./pages/Banks";  
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -15,6 +16,7 @@ const AppRoutes = () => {
         <Route path="/atms" element={<ATMs />} />
         <Route path="/banks" element={<Banks />} />  {/* New Route */}
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </Router>

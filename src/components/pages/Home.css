@@ -1,0 +1,38 @@
+/* App.css or equivalent file */
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.atm-list {
+  margin-top: 20px;
+}
+
+.atm-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.atm-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.atm-location, .atm-fee {
+  font-size: 16px;
+}
+
+.no-atms {
+  text-align: center;
+  margin-top: 20px;
+  color: red;
+}

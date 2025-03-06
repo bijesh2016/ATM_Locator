@@ -1,17 +1,18 @@
 import React from "react";
+import "./SearchBar.css"; // Import CSS
 
 const SearchBar = () => {
   return (
-    <div className="text-center my-10">
-      <h2 className="text-2xl font-bold">Find Your Perfect ATM</h2>
-      <p className="text-gray-600">Discover ATMs that match your preferences and location</p>
-      <div className="mt-4 flex justify-center">
+    <div className="search-bar-container">
+      <h2 className="search-title">Find Your Perfect ATM</h2>
+      <p className="search-description">Discover ATMs that match your preferences and location</p>
+      <div className="search-input-container">
         <input
           type="text"
           placeholder="Enter location or city"
-          className="border p-2 rounded-l w-80"
+          className="search-input"
         />
-        <button className="bg-blue-500 text-white px-4 rounded-r">Search ATMs</button>
+        <button className="search-button">Search ATMs</button>
       </div>
     </div>
   );

@@ -1,0 +1,17 @@
+
+.banks-container {
+    padding: 20px;
+  }
+  
+  .banks-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  /* Full width bank list container */
+.bank-list-container {
+    width: 100%;
+    padding: 0 15px; /* Adds padding for better layout */
+  }
+  

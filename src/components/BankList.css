@@ -1,0 +1,75 @@
+/* styles.css or App.css */
+
+/* Container for the whole page */
+.banks-container {
+  min-height: 100vh;
+  padding: 24px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Bank List Container */
+.bank-list {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual Bank Item */
+.bank-item {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.bank-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bank-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bank-location {
+  font-size: 16px;
+  color: #555;
+}
+
+/* No Banks Found Message */
+.no-banks-found {
+  text-align: center;
+  color: #d9534f;
+  font-size: 16px;
+}

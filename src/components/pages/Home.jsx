@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ATMs = [
   { id: 1, atmName: "Nepal Rastra Bank ATM", atmLocation: "Kathmandu", transactionFee: "NPR 20" },
@@ -14,18 +15,23 @@ const Home = ({ searchQuery }) => {
   );
 
   return (
-    <div className="p-6">
-      <h1 className="text-center text-2xl font-bold">Find Your Perfect ATM</h1>
-      <div className="mt-4">
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Find Your Perfect ATM</h1>
+      <div className="row">
         {filteredATMs.length > 0 ? (
           filteredATMs.map(ATM => (
-            <div key={ATM.id} className="border p-4 rounded-md shadow-md mt-4">
-              <h2 className="text-xl font-bold">{ATM.atmName}</h2>
-              <p>Location: {ATM.atmLocation}</p>
+            <div key={ATM.id} className="col-md-4 mb-4">
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">{ATM.atmName}</h5>
+                  <p className="card-text">Location: {ATM.atmLocation}</p>
+                  <p className="card-text">Transaction Fee: {ATM.transactionFee}</p>
+                </div>
+              </div>
             </div>
           ))
         ) : (
-          <p className="text-center mt-4 text-red-500">No ATMs found</p>
+          <p className="text-center">No ATMs found</p>
         )}
       </div>
     </div>

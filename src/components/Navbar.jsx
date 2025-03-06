@@ -17,8 +17,8 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav>
-      <h1>
+    <nav className="navbar">
+      <h1 className="navbar-logo">
         <Link to="/">ATM Locator</Link>
       </h1>
 
@@ -27,6 +27,7 @@ const Navbar = ({ onSearch }) => {
         placeholder="Search ATMs..."
         value={query}
         onChange={handleSearch}
+        className="navbar-search"
       />
 
       {/* Hamburger Button */}
@@ -46,13 +47,17 @@ const Navbar = ({ onSearch }) => {
       </div>
 
       {/* Desktop Navigation */}
-      <ul>
+      <ul className="desktop-menu">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/banks">Banks</Link></li>
         <li><Link to="/about">About</Link></li>
       </ul>
 
-      <button onClick={() => navigate("/login")}>Login</button>
+      {/* Navbar buttons */}
+      <div className="navbar-buttons">
+        <button onClick={() => navigate("/login")} className="navbar-button">Login</button>
+        <button onClick={() => navigate("/register")} className="navbar-button">Register</button>
+      </div>
     </nav>
   );
 };
