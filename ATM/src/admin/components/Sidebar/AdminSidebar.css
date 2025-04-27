@@ -1,0 +1,27 @@
+.admin-sidebar {
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-link {
+  color: #555;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+}
+
+.sidebar-link:hover, .sidebar-sublink:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.sidebar-sublink {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.active-link {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+}

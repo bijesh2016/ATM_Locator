@@ -1,0 +1,100 @@
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 40px 40px; 
+  background-color: #f8f9fa;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.atms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.atm-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.atm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.atm-content {
+  padding: 25px;
+}
+
+.atm-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+.atm-content h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.atm-content h3 a:hover {
+  text-decoration: underline;
+}
+
+.atm-details {
+  margin-bottom: 20px;
+}
+
+.atm-details p {
+  margin: 8px 0;
+  color: #4a5568;
+}
+
+.map-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.map-button:hover {
+  background-color: #1d4ed8;
+  color: white;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 100px 20px 30px;
+  }
+  
+  .atms-grid {
+    grid-template-columns: 1fr;
+  }
+}
