@@ -6,7 +6,6 @@ const AdminNavbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div className="container-fluid px-4" style={{ maxWidth: '100%' }}>
-        {/* Left Section */}
         <div className="d-flex align-items-center">
           <button 
             className="navbar-toggler me-2" 

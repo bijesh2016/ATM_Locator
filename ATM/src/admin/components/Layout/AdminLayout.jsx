@@ -7,7 +7,7 @@ import './AdminLayout.css';
 
 const AdminLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const location = useLocation(); // <-- ADD THIS
+  const location = useLocation(); 
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -23,7 +23,6 @@ const AdminLayout = () => {
         <main className={`admin-main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-collapsed'}`}>
           <Container fluid>
             
-            {/* Show Dashboard Overview only on dashboard route */}
             {location.pathname === "/admin/dashboard" && (
               <>
                 <div className="dashboard-header">
@@ -38,7 +37,7 @@ const AdminLayout = () => {
                     <Card className="dashboard-card">
                       <Card.Body>
                         <Card.Title>Banks</Card.Title>
-                        <Card.Text className="stat-value">42</Card.Text>
+                        <Card.Text className="stat-value">15</Card.Text>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -46,7 +45,7 @@ const AdminLayout = () => {
                     <Card className="dashboard-card">
                       <Card.Body>
                         <Card.Title>Active Users</Card.Title>
-                        <Card.Text className="stat-value">3,789</Card.Text>
+                        <Card.Text className="stat-value">400</Card.Text>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -80,7 +79,6 @@ const AdminLayout = () => {
               </>
             )}
 
-            {/* Render Page Content */}
             <Outlet />
           </Container>
         </main>

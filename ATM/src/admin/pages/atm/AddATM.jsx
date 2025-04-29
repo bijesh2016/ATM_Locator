@@ -44,7 +44,7 @@ const AddATM = () => {
       console.log('Form submitted:', formData);
       setSuccess(true);
       setTimeout(() => {
-        navigate('/atms'); 
+        navigate('/User'); 
       }, 1500);
     } else {
       setErrors(validationErrors);
@@ -63,7 +63,7 @@ const AddATM = () => {
   };
 
   return (
-    <Container fluid className="py-4">
+    <Container fluid className="py-5">
       <Row className="justify-content-center">
         <Col lg={8}>
           <Card className="mb-4">

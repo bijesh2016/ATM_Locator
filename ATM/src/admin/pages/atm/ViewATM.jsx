@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch, FaEdit, FaTrash } from 'react-icons/fa';
+import { useNavigate,Link } from 'react-router-dom';
+import { FaSearch, FaEdit, FaTrash,FaPlus } from 'react-icons/fa';
+import EditButton from '../../components/edit';
 
 const ViewATM = () => {
+  const navigate = useNavigate();
+  
+  const handleEdit = (atm) => {
+    navigate(`/admin/atm/edit/${atm.id}`);
+  };
   // Sample ATM data - replace with real API calls
   const atms = [
     { id: 1, name: 'Main Street ATM', location: '123 Main St', bank: 'City Bank', status: 'Active' },
@@ -40,43 +46,32 @@ const ViewATM = () => {
           </select>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Bank</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {atms.map((atm) => (
-                <tr key={atm.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">{atm.name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{atm.location}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{atm.bank}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      atm.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                    }`}>
-                      {atm.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button className="text-blue-600 hover:text-blue-900 mr-4">
-                      <FaEdit />
-                    </button>
-                    <button className="text-red-600 hover:text-red-900">
-                      <FaTrash />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="space-y-4">
+  {atms.map((atm) => (
+    <div key={atm.id} className="bg-white p-4 rounded-lg shadow">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div className="mb-2 sm:mb-0">
+          <h3 className="font-medium text-gray-900">{atm.name}</h3>
+          <p className="text-sm text-gray-500">{atm.location}</p>
         </div>
+        <div className="flex items-center space-x-4">
+          <span className="text-sm text-gray-600">{atm.bank}</span>
+          <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+            atm.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+          }`}>
+            {atm.status}
+          </span>
+          <button 
+            className="text-blue-600 hover:text-blue-900"
+            aria-label="Edit"
+          >
+            <FaEdit />
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+    </div>
 
         <div className="px-6 py-4 border-t flex items-center justify-between">
           <div className="text-sm text-gray-500">

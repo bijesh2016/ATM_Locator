@@ -4,8 +4,8 @@ import { FaSearch, FaUserCheck, FaTrash } from 'react-icons/fa';
 const BlockedUsers = () => {
   // Sample blocked users data - replace with real API calls
   const blockedUsers = [
-    { id: 1, name: 'Alice Brown', email: 'alice@example.com', blockedDate: '2023-05-15', reason: 'Violation of terms' },
-    { id: 2, name: 'Charlie Davis', email: 'charlie@example.com', blockedDate: '2023-06-22', reason: 'Suspicious activity' },
+    { id: 1, name: 'david', email: 'david11@gmail.com', blockedDate: '2024-05-15', reason: 'Violation of terms' },
+    { id: 2, name: 'Charlie Chaplin', email: 'charlie@example.com', blockedDate: '2023-06-22', reason: 'Suspicious activity' },
   ];
 
   return (

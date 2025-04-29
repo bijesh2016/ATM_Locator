@@ -1,33 +1,44 @@
-import React from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { useEffect, useRef } from 'react';
 
-const mapContainerStyle = {
-  width: "100%",
-  height: "500px",
+const GoogleMap = ({ atms }) => {
+  const mapRef = useRef(null);
+  const apiKey = 'AIzaSyA1AppZWRE2p_AnOLXmsnhhHXXPXcEwlxY';
+
+  useEffect(() => {
+    if (!window.google) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+      script.async = true;
+      script.onload = initializeMap;
+      document.head.appendChild(script);
+    } else {
+      initializeMap();
+    }
+
+    function initializeMap() {
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: { lat: 27.7172, lng: 85.3240 },
+        zoom: 12,
+        styles: [
+          {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [{ visibility: "off" }]
+          }
+        ]
+      });
+
+      atms.forEach(atm => {
+        new window.google.maps.Marker({
+          position: { lat: atm.latitude, lng: atm.longitude },
+          map,
+          title: atm.atmName,
+        });
+      });
+    }
+  }, [atms]);
+
+  return <div ref={mapRef} style={{ height: '100%', width: '100%' }} />;
 };
 
-const center = {
-  lat: 27.7172, 
-  lng: 85.324, 
-};
-
-const GoogleMapComponent = () => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyA1AppZWRE2p_AnOLXmsnhhHXXPXcEwlxY", // Replace with your API key
-  });
-
-  if (loadError) return <div>Error loading maps</div>;
-  if (!isLoaded) return <div>Loading Maps...</div>;
-
-  return (
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      zoom={12} // Adjust the zoom level
-      center={center}
-    >
-      <Marker position={center} />
-    </GoogleMap>
-  );
-};
-
-export default GoogleMapComponent;
+export default GoogleMap;

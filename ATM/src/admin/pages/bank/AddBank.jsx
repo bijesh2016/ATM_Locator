@@ -57,7 +57,7 @@ const AddBank = () => {
   };
 
   return (
-    <Container fluid className="py-4">
+    <Container fluid className="py-5">
       <Row className="justify-content-center">
         <Col lg={8}>
           <Card className="mb-4">

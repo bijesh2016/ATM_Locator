@@ -8,6 +8,7 @@ import Home from "../src/User/pages/Home";
 import Banks from "../src/User/pages/Banks";
 import About from "../src/User/pages/About";
 import Login from "../src/User/pages/Login";
+import GoogleMap from "./User/GoogleMap";
 
 // Admin
 import AdminLayout from "../src/admin/components/Layout/AdminLayout";
