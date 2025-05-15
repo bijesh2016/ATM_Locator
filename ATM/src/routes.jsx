@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
 
 const AppRoutes = () => {
   return (
@@ -14,7 +15,8 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/atms" element={<ATMs />} />
-        <Route path="/banks" element={<Banks />} />  {/* New Route */}
+        <Route path="/banks" element={<Banks />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

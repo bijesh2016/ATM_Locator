@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const loginSchema = yup.object().shape({
   email: yup.string().email('Invalid email format').required('Email is required'),
@@ -31,6 +32,7 @@ const forgotPasswordSchema = yup.object().shape({
 const AuthPage = () => {
   const [authMode, setAuthMode] = useState('login'); // login, register, forgot
   const [serverMessage, setServerMessage] = useState({ type: '', text: '' });
+  const navigate = useNavigate();
 
   const { 
     register: loginRegister, 
@@ -55,8 +57,17 @@ const AuthPage = () => {
 
   const handleLogin = (data) => {
     console.log('Login data:', data);
+    // Set login state
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userEmail', data.email);
+    
     setServerMessage({ type: 'success', text: 'Login successful!' });
     resetLogin();
+    
+    // Redirect to home page after successful login
+    setTimeout(() => {
+      navigate('/');
+    }, 1500);
   };
 
   const handleRegister = (data) => {

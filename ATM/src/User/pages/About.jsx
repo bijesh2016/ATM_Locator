@@ -28,7 +28,6 @@ const About = () => {
         Have any questions? Feel free to reach out to us at <a href="mailto:support@atmlocator.com">support@atmlocator.com</a>. We're here to help you with any inquiries.
       </p>
 
-      {/* Testimonials Section */}
       <div className="testimonials-section mt-5">
         <h3 className="text-center mb-4">What Our Users Say</h3>
         <div className="row justify-content-center">
@@ -37,7 +36,7 @@ const About = () => {
               <p className="testimonial-text">
                 "ATMLocator has made it so much easier to find ATMs while traveling. I saved time and avoided high transaction fees!"
               </p>
-              <p className="testimonial-author">— John Doe, Kathmandu</p>
+              <p className="testimonial-author">— ABC, Kathmandu</p>
             </div>
           </div>
           <div className="col-md-4">
